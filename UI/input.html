@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        form {
+            margin: auto;
+            width: 50%;
+            padding: 50px;
+        }
+        div {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 30px;
+        }
+        label {
+            text-transform: uppercase;
+        }
+        input {
+            padding: 0;
+            margin: 0;
+            outline: none;
+            border: 0;
+            border-bottom: 0.5px solid gray;
+        }
+        input[value=''] {
+            /* display: none; */
+            outline: none;
+            height: 10px !important;
+        }
+        input:focus,input:active/*, div input:not([type="checkbox"]):not([value=""]) */ {
+            height: 30px;
+            outline: none;
+            transition: 0.9s height;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <div>
+            <label for="name">name</label>
+            <input type="text" name="" id="name">
+        </div>
+        <div>
+            <label for="email">email</label>
+            <input type="text" name="" id="email">
+        </div>
+        <div>
+            <label for="password">password</label>
+            <input type="text" name="" id="password">
+        </div>
+    </form>
+    <script>
+        const inputs = document.getElementsByTagName('input');
+        for (let i = 0; i < inputs.length; i++) {
+            inputs[i].onchange = function change(e) {
+                if (e.target.value !== '') {
+                    e.srcElement.style.transition = {
+                        transitionProperty: 'height',
+                        transitionDuration: '10s'
+                    }
+                    e.srcElement.style.height = '30px'
+                } else {
+                    e.srcElement.style.height = '10px'
+                }
+            }
+            console.log(inputs.length);
+        }
+    </script>
+</body>
+</html>

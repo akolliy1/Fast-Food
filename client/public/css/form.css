@@ -1,0 +1,21 @@
+body {
+    height: 100%;
+}
+.container {
+    grid-template-areas: 'header header header'
+                    'body body body';
+    grid-gap: 20px
+}
+nav {
+    background: rgb(242,242,242) !important;
+    z-index: 40;
+}
+/* Add grid position to form and background color */
+.form {
+    grid-area: body;
+    background: rgba(255, 255, 255, 0.7)/* rgba(250,234,229, 0.8); */
+}
+label::after {
+    content: ' *';
+    color: red;
+}

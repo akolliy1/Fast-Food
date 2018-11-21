@@ -1,0 +1,396 @@
+@import url('./modules/dropdown.css');
+@import url('./modules/header.css');
+@import url('./modules/flex.css');
+@import url('./modules/card.css');
+@import url('./modules/backdrop.css');
+@import url('./modules/form.css');
+@import url('./modules/color.css');
+@import url('./modules/background.css');
+@import url('./modules/hero-background.css');
+@import url('./modules/table.css');
+@import url('./modules/spinner.css');
+/* for flash messages */
+.flash {
+    display: flex;
+    align-content: space-between;
+    position: fixed;
+    box-sizing: content-box;
+    width: 35%;
+    font-family: 'Lato', sans-serif;
+    font-weight: 100;
+    padding: 20px;
+    border-radius: 2px;
+    top: 0;
+    left: 30%;
+    margin: auto;
+    color: white;
+    z-index: 200;
+    background-color: rgb(20, 172, 20)
+}
+@media screen and (max-width: 700px) {
+    .flash {
+        width: 55%;
+        left: 25%;
+    }
+}
+.flash span {
+    flex-basis: 5%;
+    font-weight: 900;
+    cursor: pointer;
+}
+.cancel {
+    display: none
+}
+.flash h6 {
+    font-size: 15px;
+    padding-right: 10px;
+    flex-basis: 90%;
+}
+/* end of flash messages */
+
+/* Control default browser behavior */
+button, hr, body, html, span, div, h1, h2, h3, h4, h5, h6, section, form, a, img, footer, ul, li, p, nav, input {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.active-dashboard {
+    background: gray;
+    color: white
+}
+.border-green {
+    border: 2px solid green !important
+}
+input[type=button],input, a {
+    outline: none;
+    text-decoration: none
+}
+.form-group {
+    box-sizing: border-box
+}
+.form-group-image {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-areas: content;
+    width: 80%;
+    margin: auto;
+}
+.form-group-image input[type=file]{
+    grid-area: content;
+    cursor: pointer;
+    width: 100%;
+    height: 200px !important;
+    opacity: 0;
+    z-index: 10;
+    border: 1px solid black
+}
+.form-group-image img{
+    z-index: 5;
+    border-radius: 3px;
+    grid-area: content;
+    width: 100%;
+    height: 200px;
+}
+.form-group-image .img-overlay {
+    height: 200px;
+    width: 100%;
+    z-index: 2;
+    grid-area: content;
+    display: flex;
+    color: white;
+    transition: background-color 100ms ease-in;
+    justify-content: center;
+}
+.form-group #price, .form-group #number 
+{
+    height: 35px;
+    padding: 0 10px;
+}
+.form-group-image:hover .img-overlay{
+    z-index: 7;
+    background-color: rgba(0,0,0,0.3);
+}
+.form-group-image .img-overlay p {
+    text-align: center;
+    line-height: 30px;
+    font-size: 25px;
+    margin: auto;
+}
+.hide {
+    display: block;
+}
+.hide-modal {
+    opacity: 1;
+    visibility: hidden;
+    animation: hideModal 235ms ease-out;
+}
+@keyframes hideModal{
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.3;
+        animation-timing-function: ease-out
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+.show {
+    display: block;
+}
+.clear {
+    clear: both;
+}
+.center {
+    text-align: center;
+    justify-content: center;
+}
+
+/* parent container */
+.container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    box-sizing: border-box;
+}
+#background-picture {
+    opacity: 0.6;
+}
+.btn-color {
+    cursor: pointer;
+    background: rgb(28, 150, 28);
+    border-radius: 5px;
+    box-shadow: 1px 3px 3px green
+}
+.btn-medium {
+    padding: 10px 40px
+}
+.btn-color:hover {
+    background: green;
+    box-shadow: 1px 3px 3px rgb(28, 150, 28)
+}
+.modal {
+    box-sizing: border-box;
+    animation: showModal 245ms ease-in;
+}
+#order-confirmation {
+    margin-top: 72px;
+}
+#order-confirmation .modal-content::after, #order-confirmation .modal-content{
+    z-index: 7 !important;
+}
+#order-details-modal, #add-meal-modal {
+    position: absolute !important;
+    background-color: rgba(255, 249, 249, 0.3);
+    width: 100%;
+    min-height: 100%;
+    z-index: 16;
+    top: 0;
+    left: 0;
+}
+@keyframes hideModal {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.3;
+        animation-timing-function: ease-in
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+.modal .modal-content
+{
+    width: 35%;
+    background-color: white;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+#add-meal-modal .modal-content, #order-details-modal .modal-content
+{
+    margin: 7% auto 10px auto;
+}
+#order-confirmation .modal-content 
+{
+    margin: 2% auto 10px auto;
+}
+.modal-content::after 
+{
+    color: rgba(10, 10, 10, 0.2);
+    content: attr(data-bg-text);
+    display: block;
+    font-size: 80px;
+    line-height: 1;
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    z-index: 15;
+    transform: rotate(70deg);
+}
+#add-meal-modal .modal-header, #order-confirmation .modal-header, #order-details-modal .modal-header 
+{
+    font-size: 25px;
+}
+#order-confirmation .modal-header 
+{
+    font-size: 25px;
+    padding-top: 10px;
+    text-align: center
+}
+#order-confirmation .modal-header .modal-title
+{
+    padding-top: 20px
+}
+#add-meal-modal .modal-header, #order-details-modal .modal-header 
+{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 7px;
+    padding: 20px;
+}
+.modal .close {
+    color: black;
+    margin-right: 5px;
+}
+.modal .close a {
+    transition: color 200ms ease-in
+}
+.modal .close a:hover {
+    color: green
+}
+#add-meal-modal .modal-body, #order-details-modal .modal-body 
+{
+    margin-top: 15px;
+    padding: 5px 20px;
+}
+#order-confirmation .modal-body
+{
+    padding: 0 20px;
+}
+.modal .order-misc p {
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+#order-confirmation .order-summary, #order-details-modal .order-summary 
+{
+    margin: 20px 0;
+    padding: 10px 0;
+    border-top: 0.1px solid gray;
+    border-bottom: 0.1px solid gray
+
+}
+.modal .order-summary div, .modal .order-amount div
+{
+    display: inline-block;
+    width: 100%;
+    margin: 10px 0;
+}
+.modal .order-summary div p, .modal .order-amount div p
+{
+    float: left;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+.modal .order-summary div p:last-child, .modal .order-amount div p:last-child
+{
+    float: right;
+}
+.modal .order-amount div:last-child {
+    border-top: 0.1px solid gray;
+    padding: 20px 0
+}
+.modal .order-amount div h1 {
+    font-size: 27px;
+    float: right;
+    color: rgb(184, 170, 170)
+}
+.modal .order-amount p {
+    font-size: 15px;
+}
+.user-menu {
+    width: 100%;
+    position: relative;
+    top: 72px;
+}
+.user-menu ul {
+    display: flex;
+    margin-top: 15px;
+    flex-wrap: wrap;
+    padding: 0 5px;
+    justify-content: flex-start
+}
+@media screen and (max-width: 1183px) 
+{
+    .modal .modal-content
+    {
+        width: 80%;
+        background-color: white;
+        box-sizing: border-box;
+        border-radius: 4px;
+    }
+}
+@media screen and (max-width: 768px) {
+    #order-confirmation .modal-content 
+    {
+        margin: 6% auto 10px auto;
+    }
+}
+@media screen and (max-width: 550px) 
+{
+    .user-menu ul 
+    {
+        justify-content: center
+    }
+}
+.user-menu .page-heading hr 
+{
+    margin: auto;
+    width: 40%
+}
+.main-menu {
+    left: 16.666%;
+    position: absolute;
+    top: 72px;
+}
+.modal .order-summary, .Meal-card-btns, .Meal-card-btns-user, .modal .order-misc, .modal .order-amount {
+    font-family: Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+.modal-header, .font, .order-card, .page-heading
+{
+    font-family: 'Arial Narrow', Arial, sans-serif;
+}
+.page-heading hr {
+    width: 200px
+}
+.order-card {
+    background-color: white;
+    border-radius: 3px;
+    cursor: pointer;
+    height: 170px !important;
+    padding: 30px;
+}
+.order-amount {
+    font-size: 23px;
+}
+.order-header,.order-footer {
+    justify-content: space-between
+}
+@media screen and (max-width: 1050px) {
+    .modal-content {
+        width: 60%;
+    }
+}
+@media screen and (max-width: 768px) {
+    .main-menu {
+        left: 0;
+    }
+}
+@media screen and (max-width: 650px) {
+    .modal-content {
+        width: 90%;
+    }
+}

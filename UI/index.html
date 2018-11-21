@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="./assets/css/utils.css">
+    <title>index</title>
+</head>
+<body>
+    <div class="container">
+        <nav id="header">
+            <div id="title">
+                <a href="#"> 
+                    fast-food-fast
+                </a>
+            </div>
+            <div id="activity">
+                <a href="#" id="signin" onclick="openModal()">signin</a>
+                <a href="./signup.html">Create Account</a>
+            </div>
+        </nav>
+        <section class="hero" style="background-image: url(./assets/images/food-hero.jpg)">
+            <div id="hero-content-area">
+                <h1>Fast Food</h1>
+                <h4><i>Fast-Food-Fast</i> is an online store for ordering your favourite meals</h4>
+                <a href="./user-menu.html" class="btn">place order</a>
+            </div>
+        </section>
+        <section id="services">
+            <!-- <div class="scroll-down">&RightAngleBracket;</div> -->
+            <h4>How it works</h4>
+            <ul>
+                <li> 
+                    <img src="./assets/images/food-hero.jpg" alt="">
+                    <h5>Browse menus and your order in seconds without any delay</h5>
+                </li>
+                <li>
+                    <img src="./assets/images/fast-delivery.png" alt="">
+                    <h5>Follow the status of your order with real-time alerts</h5>
+                </li>
+                <li>
+                    <img src="./assets/images/24-hrs.png" alt="">
+                    <h5>Explore restaurants that deliver to your doorstep</h5>
+                </li>
+            </ul>
+        </section>
+        <section class="backdrop-form">
+            <div class="backdrop" onclick="closeBackdrop()"></div>
+            <div class="form push-down">
+                <div id="page-title">
+                    <h4>Signin</h4>
+                    <hr/>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input id="email" type="text" placeholder="email or username">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input id="password" type="text" placeholder="password">
+                </div>
+                <div class="form-group">
+                    <input type="button" value="signin">
+                </div>
+                <div class="form-group">
+                    <span id="back" onclick="closeModal()">&larr; Back</span>
+                    <h4>I don't have an account?
+                        <a href="./signup.html">Create account</a>
+                    </h4>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="./assets/js/popup.js"></script>
+</body>
+</html>

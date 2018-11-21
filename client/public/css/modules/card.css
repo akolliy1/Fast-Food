@@ -1,0 +1,211 @@
+.card {
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 1px 3px 8px gray
+}
+.meal-card {
+    border-radius: 3px;
+    height: 200px;
+    /* height: auto; */
+    display: grid;
+    grid-template-areas: 'head'
+                        'body';
+    box-sizing: border-box;
+    box-shadow: 0.1px 3px 8px gray;
+    animation: decrease-height 300ms ease forwards;
+}
+.meal-card img {
+    grid-area: head
+}
+.meal-card .meal-card-title {
+    grid-area: head
+}
+@keyframes decrease-height {
+    0% {
+        height: 250px;
+        animation-timing-function: ease-in;
+        transform: translateY(20px);
+    }
+    30% {
+        height: 240px;
+        animation-timing-function: ease-in;
+        transform: translateY(60px);
+    }
+    50% {
+        height: 220px;
+        animation-timing-function: ease-in;
+        transform: translateY(90px);
+    }
+    100% {
+        transform: translateY(0px);
+        height: 200px;
+    }
+}
+/* change border radius on dropdown */
+.meal-card-height img {
+    border-radius: 3px 3px 0 0 !important;
+}
+/* meal card dropdown animmation */
+.meal-card-height {
+    animation: increase-height 700ms ease forwards;
+}
+@keyframes increase-height{
+    0% {
+        height: 210px;
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    40% {
+        height: 230px;
+        animation-timing-function: ease-in;
+        transform: translateY(30px);
+    }
+    60% {
+        height: 260px;
+        animation-timing-function: ease-in;
+        transform: translateY(40px);
+    }
+    80% {
+        height: 260px;
+        animation-timing-function: ease-in;
+        transform: translateY(90px);
+    }
+    90% {
+        height: auto;
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0);
+        height: auto;
+        opacity: 1;
+        border-radius: 3px
+    }
+}
+.show-meal-card {
+    display: block !important;
+    animation: show-meal 600ms cubic-bezier(0.785, 0.135, 0.15, 0.86) 100ms forwards;
+    opacity: 0;
+}
+
+@keyframes show-meal {
+    0% {
+        opacity: 0;
+    }
+    80% {
+        animation-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86)
+    }
+    95% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.meal-card img
+{
+    height: 200px;
+    border-radius: 3px;
+}
+.Meal-card-btns, .Meal-card-btns-user
+{
+    width: 100%;
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 10px 20% 10px 20%;
+}
+.Meal-card-btns-user, .Meal-card-btns button
+{
+    border: none;
+    box-sizing: border-box;
+    background: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+.Meal-card-btns-user {
+    text-align: center
+}
+.Meal-card-btns button
+{
+    float: left;
+}
+.Meal-card-btns button:last-child
+{
+    float: right;
+}
+.meal-card-title, .Meal-card-body 
+{
+    padding: 5px 10px 5px 10px
+}
+.Meal-card-body
+{
+    box-sizing: border-box;
+    display: none;
+    grid-area: body;
+    /* margin-top: -200px; */
+}
+.Meal-card-body div:nth-child(1) {
+    margin-bottom: 5px;
+    padding: 10px 5px 0 5px;
+    font-weight: 100
+}
+.price {
+    font-size: 23px;
+    color: gray;
+    margin-bottom: 10px;
+    font-weight: 100
+}
+.meal-card-title {
+    box-sizing: border-box;
+    font-size: 20px;
+    height: 200px;
+    display: flex;
+    border-radius: 3px;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.55);
+    /* position: relative; */
+    /* top: -204px; */
+    /* margin-bottom: -203px; */
+}
+.meal-card-title h2 {
+    color: white;
+    align-self: center;
+    font-family: "Nunito", sans-serif;
+    font-weight: 100;
+    font-size: 20px;
+    text-transform: capitalize
+    /* align-items: center */
+}
+.card-body
+{
+    padding: 10px
+}
+.card-line-height
+{
+    height: 100px;
+    line-height: 100px;
+}
+.card-height
+{
+    height: 100px !important;
+}
+.card-highest
+{
+    height: 200px;
+}
+@media screen and (max-width: 1200px)
+{
+    .card {
+        margin: 15px;
+        border-radius: 5px;
+        box-shadow: 1px 2px 1px gray
+    }
+
+}
+@media screen and (max-width: 800px)
+{
+    .card {
+        margin: 20px;
+        border-radius: 5px;
+        box-shadow: 1px 2px 1px gray
+    }
+}

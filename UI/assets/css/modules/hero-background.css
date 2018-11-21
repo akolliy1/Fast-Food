@@ -1,0 +1,56 @@
+/* Hero section */
+.hero {
+    width: 100%;
+    grid-area: hero;
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    /* display: block; */
+}
+/* Hero text-content style */
+#hero-content-area {
+    width: 60%;
+    color: white;
+    margin-top: 50px;
+    line-height: 30px;
+    box-sizing: border-box;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    border-left: 3px solid white;
+    animation: 1s hero-animation 0.5s forwards;
+    opacity: 0;
+}
+/* Animate the Hero text-content section to the left */
+@keyframes hero-animation {
+    100% {
+        margin-left: 7vw;
+        opacity: 1;
+    }
+}
+/* decrease section to the right */
+#hero-content-area h1{
+    font-size: 20px;
+    font-style: italic;
+    padding-bottom: 20px;
+}
+#hero-content-area h4{
+    font-size: 20px;
+    padding-bottom: 25px;
+}
+#hero-content-area a{
+    font-size: 20px;
+    padding: 10px;
+    background: rgb(34, 211, 34);
+    color: white;
+    font-style: italic;
+    border-radius: 4px;
+    box-shadow: 1px 2px 1px green
+}
+#hero-content-area a:hover {
+    background: green;
+    box-shadow: 1px 2px 1px rgb(34, 211, 34);
+}
+/* End of Hero styling */

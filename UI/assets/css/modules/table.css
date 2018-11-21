@@ -1,0 +1,27 @@
+.dashboard-table {
+    width: calc(100% - 16.66%)
+}
+table {
+    width: 100%;
+    display: table;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 3px;
+    margin-bottom: 4.16667%;
+    border-collapse: collapse;
+}
+table thead,
+table tbody,
+table tr {
+    width: 100%;
+    line-height: 40px
+}
+table th,
+table td,
+table tr {
+    border: 0.4px solid gray;
+    text-align: center
+}
+table thead {
+    background: rgb(87, 207, 87) !important;
+    color: white
+}

@@ -1,0 +1,45 @@
+.bg-brown {
+    background-color: rgba(65, 60, 60, 0.5)
+}
+.bg-white-transparent {
+    background-color: rgba(255, 255, 255, 0.4)
+}
+.bg-white {
+    background-color: rgba(255, 255, 255, 0.2)
+}
+.bg-gray {
+    background-color: rgba(211, 206, 206, 0.5)
+}
+.bg-default {
+    background-color: white !important
+}
+.color-gray {
+    color: rgb(189, 174, 174)
+}
+.color-danger {
+    color: rgb(247, 68, 68)
+}
+.color-success {
+    color: green !important
+}
+.color-default {
+    color: white
+}
+.bg-green {
+    background: rgb(34, 170, 34) !important
+}
+.color-green {
+    color: rgb(34, 170, 34)
+}
+.color-black {
+    color: rgb(34, 170, 34)
+}
+.color-warning {
+    color: rgb(245, 172, 143)
+}
+.color-white {
+    color: white !important
+}
+.favorit-color {
+    background-color: darkslategrey 
+}

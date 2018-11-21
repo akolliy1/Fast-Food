@@ -1,0 +1,123 @@
+/* parent container */
+.container {
+    grid-template-areas: 'header header'
+                    'hero hero'
+                    'main main';
+}
+/* General style for Navbar title and Navbar links */
+#activity a {
+    color: black;
+    padding: 10px
+}
+/* Container for Navbar links */
+#activity {
+    flex-basis: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+/* UpperCase Navbar links */
+#activity a{
+    text-transform: uppercase;
+}
+/* Change the Navbar link color on mouse-over */
+#activity a:hover{
+    color: rgb(49, 180, 49);
+}
+/* End of Navbar section */
+
+/* services section stlye */
+#services {
+    grid-area: main;
+    margin-bottom: 20px;
+    padding: 10px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
+}
+#services h4 {
+    font: bold 28px "Open Sans", sans-serif;
+    margin-bottom: 20px;
+    text-transform: capitalize
+}
+#services ul {
+    display: flex;
+}
+#services li {
+    list-style: none;
+    border-radius: 4px;
+    width: calc(100% / 3);
+    padding: 10px;
+    height: 280px;
+    margin-right: 20px;
+    box-shadow: 3px 2px 5px gray;
+    justify-content: center;
+}
+#services li h5 {
+    text-align: center;
+}
+#services img{
+    width: 100%;
+    height: 200px;
+}
+/* End of contact section */
+
+/* Display form above all element and animate in */
+.form {
+    z-index: 150;
+    background: rgba(250,234,229, 1);
+    animation: transform 350ms forwards 5ms;
+}
+
+@keyframes transform {
+    0% {
+        margin-top: -100%;
+    }
+    100% {
+        margin-top: 10%;
+    }
+}
+/* adjust form to center and show it above all object */
+.push-down {
+    margin-top: 10%;
+}
+label::after {
+    content: ' *';
+    color: red;
+}
+/* to cancel the modal */
+#back {
+    cursor: pointer;
+    padding: 10px 0;
+}
+
+/* Media Queries */
+@media (max-width: 1150px) {
+    #services li {
+        width: calc(90% / 3);
+    }
+}
+@media screen and (max-width: 1005px) {
+    #services {
+        margin-top: 0px !important;
+        padding: 0;
+    }
+    #services ul {
+        flex-direction: column
+    }
+    #services li{
+        width: 60%;
+        margin: 0 auto 40px auto;
+        flex-basis: 50%;
+    }
+    #services img{
+        width: 100%;
+        height: 200px;
+    }
+}
+@media (max-width: 1005px) {
+    #services {
+        padding: 10px;
+        margin-top: 20vh;
+    }
+}
