@@ -54,7 +54,7 @@ class Constructor {
             <ul class="short-dropdown">
                 <li class="dropdown mr-3 remove-notify-icon">
                   <a href="#">
-                    <span class="fa fa-bell fa-1x color-green" style="font-size: 20px">Not</span>
+                    <span class="fa fa-bell fa-1x color-green" style="font-size: 20px"></span>
                   </a>
                       <ul class="dropdown-menu mt-3 bg-green">
                           <li class="dropdown-item">
