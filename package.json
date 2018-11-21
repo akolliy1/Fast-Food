@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start:dev": "nodemon server/bin/www --exec babel-node",
-    "start": "NODE_ENV=production babel-node server/bin/www",
+    "start": "babel-node server/bin/www",
     "test": "nyc mocha server/test/*.test.js --compilers js:babel-core/register --require babel-polyfill --reporter nyan --timeout 15000 --exit"
   },
   "keywords": [],
