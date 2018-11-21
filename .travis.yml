@@ -1,0 +1,14 @@
+language: node_js
+install:
+  - npm install
+node_js:
+  - '10.11.0'
+cache:
+  directory:
+    - node_modules
+script:
+  - npm run test
+after_success:
+ - travis_wait npm run coveralls
+env:
+  - NODE_ENV=test
