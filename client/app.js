@@ -15,7 +15,7 @@ import { ConfirmOrders } from './container/confirmOrders.js';
 import { DeliveryDetails } from './container/deliveryDetails.js';
 
 Switch([
-/* Route( */{ render: Homepage, exact: true, path: '/home' }/* ); */,
+/* Route( */{ render: Homepage, exact: true, path: '/' }/* ); */,
   /* Route( */{ render: Signup, exact: true, path: '/signup' }/* ); */,
   /* Route( */{ render: Signin, exact: true, path: '/signin' }/* ); */,
   /* Route( */{ render: Signup, exact: true, path: '/signup' }/* ); */,
