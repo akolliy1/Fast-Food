@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "babel-cli": "^6.26.0",
     "babel-register": "^6.26.0",
     "body-parser": "^1.18.3",
     "dotenv": "^6.0.0",
@@ -20,7 +21,6 @@
     "morgan": "^1.9.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.0.2",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
