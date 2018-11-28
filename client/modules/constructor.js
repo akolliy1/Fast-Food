@@ -247,7 +247,7 @@ class Constructor {
                         <img class="full" srcset="${meal.img ? meal.img
                             : '/app/public/images/chicken-fajitas.jpg'}" alt="meal Image"
                         />
-                        <div class="meal-card-title">
+                        <div class="meal-card-title" accessKey="${meal.mealId}">
                                 <h2>${meal.title}</h2>
                         </div>
                         <div class="Meal-card-body">
