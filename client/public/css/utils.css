@@ -9,6 +9,7 @@
 @import url('./modules/hero-background.css');
 @import url('./modules/table.css');
 @import url('./modules/spinner.css');
+@import url('./modules/icon.css');
 /* for flash messages */
 .flash {
     display: flex;

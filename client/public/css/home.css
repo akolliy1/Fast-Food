@@ -83,9 +83,9 @@
     }
 }
 /* adjust form to center and show it above all object */
-.push-down {
+/* .push-down {
     margin-top: 10%;
-}
+} */
 label::after {
     content: ' *';
     color: red;
@@ -93,8 +93,23 @@ label::after {
 /* to cancel the modal */
 #back {
     cursor: pointer;
-    padding: 10px 0;
+    /* padding: 10px 0; */
 }
+
+#page-title div h4{
+    float: left;
+}
+#page-title div span{
+    float: right;
+}
+#page-title div h4{
+    float: left;
+}
+#page-title div{
+    padding: 0 10%;
+    clear: both;
+}
+
 
 /* Media Queries */
 @media (max-width: 1150px) {

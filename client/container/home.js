@@ -169,7 +169,7 @@ export class Homepage extends Components {
                 <h4>How it works</h4>
                 <ul>
                     <li>
-                        <img src="./app/public/images/food-menu1.jpg" alt="">
+                        <img src="./app/public/images/food-menu4.jpg" alt="">
                         <h5>Browse menus and your order in seconds without any delay</h5>
                     </li>
                     <li>

@@ -55,10 +55,11 @@ class Constructor {
                 <li class="dropdown mr-3 remove-notify-icon">
                   <a href="#">
                     <span class="fa fa-bell fa-1x color-green" style="font-size: 20px"></span>
+                    <span id="icon">1</span>
                   </a>
                       <ul class="dropdown-menu mt-3 bg-green">
-                          <li class="dropdown-item">
-                            <a href="#" class="color-white">Your order was cancelled</a>
+                          <li class="dropdown-item" id="greeting">
+                            <a href="#" class="color-white">Welcome Back!</a>
                           </li>
                       </ul>
                 </li>
@@ -217,17 +218,22 @@ class Constructor {
     return (`
       <section class="backdrop-form">
         <div class="backdrop"></div>
-        <div class="form push-down">
+        <div class="form">
             <div id="page-title">
-                <h4>Signin</h4>
-                <hr/>
+                    <div>
+                        <h4>Signin</h4>
+                        <span id="back" onclick="closeModal()">&times;</span>
+                    </div>
+                    <div class="clear"></div>
+            </div>
+            <div id="page-title">
+                    <hr />
             </div>
             ${props.input}
             <div class="form-group">
                 <input type="button" value="signin">
             </div>
             <div class="form-group">
-                <span id="back">&larr; Back</span>
                 <h4>I don't have an account?
                     <a href="/signup">Create account</a>
                 </h4>
@@ -257,7 +263,7 @@ class Constructor {
                             </div>
                             <div class="Meal-card-btns">
                             ${props.userBtn ? `<div class="form-group-default">
-                                                    <button>Order Now</button>
+                                                    <button accessKey="${meal.mealId}">Order Now</button>
                                                </div>`
                                             : `<button class="btn color-success" id="edit-meal">Edit</button>
                                                <button class="btn color-danger" id="delete-meal">Delete</button>`

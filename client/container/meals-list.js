@@ -24,12 +24,15 @@ export class UserMenus extends Components {
      */
     this.shoppingCart = {
       cart: {},
+      orderCount: 0,
       addToCart(id) {
-        if (this.cart[id] !== undefined) {
-          this.cart[id].push(id);
-        } else {
-          this.cart[id] = [];
-          this.cart[id].push(id);
+        if (id) {
+          if (this.cart[id] === undefined) {
+            this.cart[id] = [id];
+            this.orderCount += 1;
+          } else {
+            this.cart[id].push(id);
+          }
         }
       },
       deleteInCart(id) {
@@ -48,7 +51,8 @@ export class UserMenus extends Components {
       meals: store.meals.meals,
       auth: store.auth.isAuth,
       name: store.auth.data ? store.auth.data.user.firstName : '',
-      userBtn: true
+      userBtn: true,
+      orderCount: this.shoppingCart.orderCount
     });
     /* validate props */
     this.propTypes = {
@@ -68,31 +72,42 @@ export class UserMenus extends Components {
   mealCardDropdown() {
     const that = this;
     const mealCard = document.querySelectorAll('.meal-card');
-    // for (let i = 0; i < mealCard.length; i++) {
-    //   mealCard[i].addEventListener('click', (el) => {
-    //     console.log(el);
-    //     const { accessKey } = el.target;
-    //   });
-    // }
-    // mealCard.item(el => console.log(mealCard[el]));
+    const mealCardBtn = document.querySelectorAll('.meal-card button');
 
+    /* Order Button */
+    mealCardBtn.forEach((ev) => {
+      ev.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const { accessKey } = e.target;
+        that.shoppingCart.addToCart(accessKey);
+        /* update notification */
+        that.notification(that.shoppingCart.orderCount);
+        that.flash('added to cart', 'success');
+      });
+    });
+
+    /* Flip Meal Card */
     mealCard.forEach((el) => {
-      el.addEventListener('click', function onclick() {
-        const { accessKey } = this;
-        // console.log(that.shoppingCart, accessKey);
-
-        const orderBtn = this.lastChild.previousSibling
-          .lastChild.previousSibling.firstChild.nextSibling;
-        orderBtn.addEventListener('click', () => { /* order button */
-          that.shoppingCart.addToCart(accessKey);
-          that.flash('added to cart', 'success');
-          console.log(that.shoppingCart, accessKey);
-          return false;
-        });
+      el.addEventListener('click', function onclick(ev) {
+        ev.preventDefault();
         this.classList.toggle('meal-card-height');
         this.lastChild.previousSibling.classList.toggle('show-meal-card');
       });
     });
+  }
+
+  /**
+   * @method notification
+   * @description notification circle
+   * @param {number} num
+   * @returns {void} void
+   */
+  notification(num) {
+    /* query notification icon */
+    const noteIcon = document.querySelectorAll('#icon');
+
+    /* Append notification innerHtml */
+    noteIcon.innerHTML = num;
   }
 
   /**
