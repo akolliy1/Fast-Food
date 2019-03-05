@@ -177,6 +177,7 @@ class Components extends Constructor {
     const inputs = document.querySelectorAll('.input');
     inputs.forEach((e) => {
       e.addEventListener('keyup', (el) => {
+        el.stopPropagation();
         const { name, value } = el.target;
         that.inputHandler(name, value);
         that.handleInputError(el);
