@@ -7,8 +7,6 @@ node_js:
 cache:
   directory:
     - node_modules
-global:
-    - CC_TEST_REPORTER_ID=53becf6d724ff4125ae096a29e896849f42920e5a83cfc283e383d0bf4799796
 before_install:
   - nvm install                         # Install node version from .nvmrc
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
@@ -21,6 +19,8 @@ after_success:
  - travis_wait npm run coveralls
 env:
   - NODE_ENV=test
+  global:
+    - CC_TEST_REPORTER_ID=53becf6d724ff4125ae096a29e896849f42920e5a83cfc283e383d0bf4799796
 # Pipe the coverage data to Code Climate
 after_script:
   - ./cc-test-reporter format-coverage -t simplecov -o coverage/codeclimate.backend.json coverage/backend/.resultset.json # Format backend coverage
